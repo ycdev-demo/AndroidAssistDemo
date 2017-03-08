@@ -29,6 +29,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     compile "com.android.support:design:${rootProject.ext.supportLibVersion}"
     compile "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+    compile "me.ycdev.android:common-arch:${rootProject.ext.ycdevCommonVersion}"
 
     // Dependencies for local unit tests
     testCompile 'junit:junit:' + rootProject.ext.junitVersion
