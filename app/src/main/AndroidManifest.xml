@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="me.ycdev.android.demo.assist">
 
     <application
@@ -34,6 +35,22 @@
             </intent-filter>
         </activity>
 
+        <!-- voice recognition and interaction services -->
+        <activity
+            android:name=".voice.VoiceSettingsActivity"
+            android:label="@string/title_activity_voice_settings" />
+        <service
+            android:name=".voice.MainRecognitionService"
+            android:label="@string/title_service_recognition"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="android.speech.RecognitionService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.speech"
+                android:resource="@xml/recognition_service" />
+        </service>
     </application>
 
 </manifest>
