@@ -2,6 +2,7 @@ package me.ycdev.android.demo.assist;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ public class AssistProxyActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Intent intent = getIntent();
         AppLogger.d(TAG, "onCreate: " + intent);
 
@@ -44,5 +46,11 @@ public class AssistProxyActivity extends Activity {
                 AppLogger.d(TAG, "source context, key=" + key + ", value=" + sourceContext.get(key));
             }
         }
+    }
+
+    public static void startAssist(Context cxt) {
+        Intent intent = new Intent(cxt, AssistProxyActivity.class);
+        intent.setAction(Intent.ACTION_ASSIST);
+        cxt.startActivity(intent);
     }
 }

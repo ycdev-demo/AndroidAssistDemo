@@ -1,11 +1,17 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+    androidProjectCommon = "https://raw.githubusercontent.com/yongce/AndroidLib/e5d103285d9680fc816fd979efa7b0d8bc154130/android_project_common.gradle"
+    androidModuleCommon = "https://raw.githubusercontent.com/yongce/AndroidLib/e5d103285d9680fc816fd979efa7b0d8bc154130/android_module_common.gradle"
+}
+
+apply from: "${androidProjectCommon}"
 
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,26 +21,11 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-ext {
-    compileSdkVersion = 25
-    buildToolsVersion = "25.0.2"
-
-    supportLibVersion = "25.2.0"
-    constraintLayoutVersion = "1.0.0"
-    ycdevCommonVersion = "1.1.2"
-
-    junitVersion = "4.12"
-    hamcrestVersion = "1.3"
-    runnerVersion = "0.5"
-    rulesVersion = "0.5"
-    mockitoVersion = "1.10.19"
-    powerMockVersion = "1.6.4"
-    robolectricVersion = "3.2.1"
+    delete rootProject.ext.appsOutDir
 }

@@ -66,7 +66,7 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="multi_select_list_preference_default_value"/>
+    <string-array name="multi_select_list_preference_default_value" />
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
@@ -79,4 +79,23 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_voice_interaction">VoiceInteractionActivity</string>
+
+    <string name="start">Start</string>
+    <string name="secure">Secure</string>
+    <string name="tree">Tree</string>
+    <string name="text">Text</string>
+    <string name="asyncStructure">(Async structure goes here)</string>
+    <string name="launchAirplane">Launch airplane mode</string>
+    <string name="confirm">Confirm</string>
+    <string name="abort">Abort</string>
+    <string name="complete">Complete</string>
+    <string name="abortVoice">Abort Voice</string>
+    <string name="commandVoice">Command</string>
+    <string name="completeVoice">Complete Voice</string>
+    <string name="pickVoice">Pick Voice</string>
+    <string name="cancelVoice">Cancel</string>
+    <string name="jumpOut">Jump out</string>
+    <string name="startFromActivity">Start voice interaction</string>
+    <string name="stopFromActivity">Stop voice interaction</string>
 </resources>

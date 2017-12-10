@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="me.ycdev.android.demo.assist.voice.VoiceInteractionActivity"
+    tools:showIn="@layout/activity_voice_interaction">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="We are interacting!"
+        />
+
+    <TextView android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/airplane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/launchAirplane"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/completeVoice"
+            />
+
+        <Button android:id="@+id/abort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/abortVoice"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/command"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/commandVoice"
+            />
+
+        <Button android:id="@+id/pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pickVoice"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelVoice"
+            />
+
+        <Button android:id="@+id/jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jumpOut"
+            />
+
+    </LinearLayout>
+</LinearLayout>

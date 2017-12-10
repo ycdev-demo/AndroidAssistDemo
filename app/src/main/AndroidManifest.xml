@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="me.ycdev.android.demo.assist">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="me.ycdev.android.demo.assist">
 
     <application
         android:name=".AssistApp"
@@ -16,12 +16,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AssistProxyActivity"
             android:excludeFromRecents="true"
@@ -29,28 +28,61 @@
             android:taskAffinity=""
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
+
                 <!-- Added in API 16 -->
-                <action android:name="android.intent.action.ASSIST"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.ASSIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <!-- voice recognition and interaction services -->
-        <activity
-            android:name=".voice.VoiceSettingsActivity"
-            android:label="@string/title_activity_voice_settings" />
         <service
             android:name=".voice.MainRecognitionService"
             android:label="@string/title_service_recognition"
             tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="android.speech.RecognitionService" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.speech"
                 android:resource="@xml/recognition_service" />
         </service>
+        <service
+            android:name=".voice.MainInteractionService"
+            android:label="Test Voice Interaction Service"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            android:process=":interactor">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/interaction_service" />
+
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".voice.MainVoiceSessionService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            android:process=":session" />
+
+        <activity
+            android:name=".voice.VoiceSettingsActivity"
+            android:label="@string/title_activity_voice_settings" />
+        <activity
+            android:name=".voice.VoiceInteractionActivity"
+            android:label="@string/title_activity_voice_interaction"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
